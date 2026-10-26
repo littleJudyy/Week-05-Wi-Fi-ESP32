@@ -1,6 +1,0 @@
-802.11 Frame Sequence Capture:
-1. Authentication Request: ESP32 (30:ae:a4:07:0f:2c) -> AP (a0:04:60:11:22:33), Open System (Seq 1)
-2. Authentication Response: AP -> ESP32, Status: SUCCESS (Seq 2)
-3. Association Request: ESP32 -> AP, Supported Rates: 1, 2, 5.5, 11, 54 Mbps, RSN IE (WPA2-PSK)
-4. Association Response: AP -> ESP32, Status: SUCCESS, Assigned AID: 1
-Duration of Auth & Assoc: 18ms.

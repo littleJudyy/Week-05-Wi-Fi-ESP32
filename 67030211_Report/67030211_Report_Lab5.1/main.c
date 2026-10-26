@@ -1,11 +1,9 @@
 #include <stdio.h>
-#include <string.h>
 #include "esp_wifi.h"
 #include "esp_log.h"
 #include "nvs_flash.h"
 
-void app_main(void)
-{
+void app_main(void) {
     nvs_flash_init();
     esp_netif_init();
     esp_event_loop_create_default();
@@ -22,7 +20,6 @@ void app_main(void)
     wifi_ap_record_t *ap_list = malloc(sizeof(wifi_ap_record_t) * ap_count);
     esp_wifi_scan_get_ap_records(&ap_count, ap_list);
 
-    printf("Scan finished! Found %d APs:\n", ap_count);
     for (int i = 0; i < ap_count; i++) {
         printf("%d: SSID: %-20s | RSSI: %3d dBm | CH: %2d\n", i+1, ap_list[i].ssid, ap_list[i].rssi, ap_list[i].primary);
     }

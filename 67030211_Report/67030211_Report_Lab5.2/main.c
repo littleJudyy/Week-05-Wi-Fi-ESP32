@@ -1,18 +1,13 @@
 #include <stdio.h>
 #include "esp_wifi.h"
 #include "esp_event.h"
-#include "esp_log.h"
 #include "nvs_flash.h"
 
-static void wifi_event_handler(void* arg, esp_event_base_t event_base, int32_t event_id, void* event_data) {
-    if (event_base == WIFI_EVENT && event_id == WIFI_EVENT_STA_START) {
-        esp_wifi_connect();
-        printf("[Wi-Fi] Connecting to Target AP...\n");
-    } else if (event_base == WIFI_EVENT && event_id == WIFI_EVENT_STA_CONNECTED) {
-        printf("[Wi-Fi] Associated with AP successfully!\n");
-    } else if (event_base == IP_EVENT && event_id == IP_EVENT_STA_GOT_IP) {
-        ip_event_got_ip_t* event = (ip_event_got_ip_t*) event_data;
-        printf("[Wi-Fi] Got IP Address: " IPSTR "\n", IP2STR(&event->ip_info.ip));
+static void wifi_event_handler(void* arg, esp_event_base_t base, int32_t id, void* data) {
+    if (base == WIFI_EVENT && id == WIFI_EVENT_STA_START) esp_wifi_connect();
+    else if (base == IP_EVENT && id == IP_EVENT_STA_GOT_IP) {
+        ip_event_got_ip_t* event = (ip_event_got_ip_t*) data;
+        printf("[Wi-Fi] Got IP: " IPSTR "\n", IP2STR(&event->ip_info.ip));
     }
 }
 
