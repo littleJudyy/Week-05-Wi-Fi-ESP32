@@ -1,0 +1,8 @@
+I (612) wifi: connecting to Faculty-IoT-Lab
+[Wi-Fi] Connecting to Target AP...
+I (1854) wifi: state: init -> auth (b0)
+I (1862) wifi: state: auth -> assoc (0)
+I (1875) wifi: state: assoc -> run (10)
+[Wi-Fi] Associated with AP successfully!
+I (1980) esp_netif_handlers: sta ip: 192.168.1.105, mask: 255.255.255.0, gw: 192.168.1.1
+[Wi-Fi] Got IP Address: 192.168.1.105

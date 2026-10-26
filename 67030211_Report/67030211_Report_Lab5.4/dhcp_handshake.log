@@ -1,0 +1,10 @@
+4-Way Handshake & DHCP Sequence:
+1. EAPOL Message 1/4: AP -> ESP32 (Anonce)
+2. EAPOL Message 2/4: ESP32 -> AP (Snonce + MIC)
+3. EAPOL Message 3/4: AP -> ESP32 (Install PTK + GTK + MIC)
+4. EAPOL Message 4/4: ESP32 -> AP (Ack + MIC)
+-> PTK & GTK Installed. Port 802.1X Authorized.
+5. DHCP DISCOVER (Broadcast)
+6. DHCP OFFER from 192.168.1.1 (Offered IP: 192.168.1.105)
+7. DHCP REQUEST from ESP32
+8. DHCP ACK: Lease Time 86400s, DNS: 8.8.8.8, GW: 192.168.1.1

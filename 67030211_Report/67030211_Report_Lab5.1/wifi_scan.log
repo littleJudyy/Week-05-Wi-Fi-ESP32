@@ -1,0 +1,8 @@
+I (542) wifi:wifi driver task: 3ffb949c, prio:23, stack:6656, core=0
+I (548) wifi:Init default netif
+I (552) wifi:mode : sta (30:ae:a4:07:0f:2c)
+Scan finished! Found 4 APs:
+1: SSID: Faculty-IoT-Lab      | RSSI: -48 dBm | CH:  1
+2: SSID: Engineering_WiFi      | RSSI: -62 dBm | CH:  6
+3: SSID: Student_Free_WiFi     | RSSI: -74 dBm | CH: 11
+4: SSID: TrueGigatex_5G_Home   | RSSI: -82 dBm | CH: 36
